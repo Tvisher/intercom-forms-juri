@@ -1,0 +1,162 @@
+.editor-component {
+  height: 550px;
+}
+
+.editor-wrapper {
+  position: relative;
+}
+.editor-wrapper.err .ql-toolbar,
+.editor-wrapper.err .ql-container {
+  border-color: red !important;
+}
+.err-message {
+  font-size: 14px;
+  margin: 10px 0;
+  font-weight: 600;
+  color: red;
+  display: none;
+}
+.err .err-message {
+  display: block;
+}
+
+.fg.err .data-field {
+  border-color: red;
+}
+.fg.err .data-field::placeholder {
+  color: red;
+}
+.ql-container,
+.ql-toolbar {
+  border: 2px solid #e3e7eb !important;
+}
+
+.ql-toolbar {
+  border-bottom: none !important;
+  border-radius: 12px 12px 0 0;
+}
+
+.ql-container {
+  border-radius: 0 0 12px 12px;
+}
+
+.charCount {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  color: #000;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.req-page__btn {
+  flex: 0 0 calc(50% - 0.625em);
+}
+
+.ql-snow .ql-tooltip[data-mode="link"]::before {
+  content: "Ссылка:";
+}
+
+.ql-snow .ql-tooltip.ql-editing a.ql-action::after {
+  content: "Сохранить";
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="small"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="small"]::before {
+  content: "Маленький";
+}
+.ql-snow .ql-picker.ql-size .ql-picker-label::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item::before {
+  content: "Нормальный";
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="large"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="large"]::before {
+  content: "Большой";
+}
+.ql-snow .ql-picker.ql-size .ql-picker-label[data-value="huge"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="huge"]::before {
+  content: "Огромный";
+}
+
+.ql-snow .ql-picker.ql-size {
+  width: 110px;
+}
+
+.error-message {
+  font-size: 16px;
+  margin: 10px 0;
+  font-weight: 600;
+  color: red;
+  display: none;
+  text-align: right;
+}
+
+.error-message.show {
+  display: block;
+}
+
+.m-check.err label span {
+  color: red;
+}
+
+.file-input__inner {
+  pointer-events: none;
+}
+
+.dz-started .file-input__inner {
+  display: none;
+}
+
+.dz-started {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 20px;
+}
+
+.dz-preview {
+  cursor: default;
+  border: 2px solid #ffdee8;
+  border-radius: 10px;
+  width: calc(33.33% - 10px);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+[data-dz-name] {
+  display: block;
+  word-break: break-all;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  line-height: 120%;
+}
+
+.dz-remove {
+  font-size: 12px;
+  font-weight: 600;
+  color: red;
+  display: block;
+  margin-top: auto;
+  padding-top: 10px;
+}
+
+.ql-container {
+  font-size: 16px;
+}
+
+.ql-container * {
+  line-height: 120%;
+}
+
+.file-input__wrap {
+  cursor: pointer;
+}
+
+.header-user__img {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='664' height='758' viewBox='0 0 664 758' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M663.28 737.116C654.842 596.601 558.984 479.694 429.372 439.966C507.879 403.273 562.397 323.534 562.397 231.089C562.397 103.848 459.239 0.689453 331.997 0.689453C204.756 0.689453 101.597 103.848 101.597 231.089C101.597 323.534 156.116 403.273 234.717 439.966C105.106 479.694 9.24783 596.601 0.809315 737.116C0.145611 748.02 8.77375 757.312 19.7723 757.312C29.7278 757.312 38.0715 749.537 38.7352 739.581C47.7426 585.507 175.648 463.386 331.997 463.386C488.347 463.386 616.252 585.507 625.354 739.581C625.923 749.537 634.267 757.312 644.317 757.312C655.316 757.312 663.944 748.02 663.28 737.116ZM139.523 231.089C139.523 124.802 225.71 38.6154 331.997 38.6154C438.285 38.6154 524.471 124.802 524.471 231.089C524.471 337.377 438.285 423.564 331.997 423.564C225.71 423.564 139.523 337.377 139.523 231.089Z' fill='%23D21957'/%3e%3c/svg%3e ");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
