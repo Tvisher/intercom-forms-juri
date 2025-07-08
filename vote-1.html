@@ -347,12 +347,39 @@
             </div>
 
         </footer>
+        <div class="sending-loader">
+            <span class="loader"></span>
+        </div>
+
+        <div class="resp-modal" data-modal-type="1">
+            <div class="resp-modal__content">
+                <div class="resp-modal__name">Спасибо за оценку!</div>
+                <div class="resp-modal__btn">Вернуться к списку проектов</div>
+            </div>
+        </div>
+
+        <div class="resp-modal" data-modal-type="2">
+            <div class="resp-modal__content">
+                <div class="resp-modal__name">Подтвердите ваше решение</div>
+                <div class="resp-modal__btns">
+                    <div class="resp-modal__btn">Подтвердить</div>
+                    <div class="resp-modal__btn _ghost">Отменить</div>
+                </div>
+            </div>
+        </div>
     </div>
+
     <script src="./js/jquery.min.js"></script>
 
     <script>
-        const userId = '';
-        const projectId = ''
+        const userId = '123123';
+        const projectId = 'asdasd123';
+
+        $(".toggle-block__head").on("click", function () {
+            const toggleBody = $(this).parent().find('.toggle-block__body');
+            $(this).toggleClass('close')
+            toggleBody.slideToggle("slow", function () { });
+        });
     </script>
 </body>
 
