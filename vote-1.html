@@ -358,12 +358,24 @@
             </div>
         </div>
 
-        <div class="resp-modal" data-modal-type="2">
+        <div class="resp-modal " data-modal-type="2">
             <div class="resp-modal__content">
                 <div class="resp-modal__name">Подтвердите ваше решение</div>
                 <div class="resp-modal__btns">
-                    <div class="resp-modal__btn">Подтвердить</div>
-                    <div class="resp-modal__btn _ghost">Отменить</div>
+                    <div class="resp-modal__btn" data-click="complite">Подтвердить</div>
+                    <div class="resp-modal__btn _ghost" data-click="close">Отменить</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="resp-modal" data-modal-type="3">
+            <div class="resp-modal__content">
+                <div class="resp-modal__name">Обоснуйте свое решение</div>
+                <textarea name="message" class="resp-modal__message"></textarea>
+                <div class="message-descr">Минимальное количество символов - 100</div>
+                <div class="resp-modal__btns">
+                    <div class="resp-modal__btn" data-click="complite">Подтвердить</div>
+                    <div class="resp-modal__btn _ghost" data-click="close">Отменить</div>
                 </div>
             </div>
         </div>
@@ -380,6 +392,8 @@
             $(this).toggleClass('close')
             toggleBody.slideToggle("slow", function () { });
         });
+
+
     </script>
 </body>
 
