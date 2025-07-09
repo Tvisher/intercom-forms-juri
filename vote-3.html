@@ -59,16 +59,16 @@
         <main class="content">
             <div class="req-page">
                 <div class="container">
+                    <div class="breadcrumbs-nav">
+                        <div class="breadcrumbs-nav__item"><a class="item-link" href="#">Номинации</a></div>
+                        <div class="breadcrumbs-nav__item"><a class="item-link" href="#">Заявки в номинации</a>
+                        </div>
+                        <div class="breadcrumbs-nav__item"><a class="item-link" href="#">Бейгер Мария
+                                Игоревна</a>
+                        </div>
+                    </div>
                     <div class="collums">
                         <div class="req-page__inner">
-                            <div class="breadcrumbs-nav">
-                                <div class="breadcrumbs-nav__item"><a class="item-link" href="#">Номинации</a></div>
-                                <div class="breadcrumbs-nav__item"><a class="item-link" href="#">Заявки в номинации</a>
-                                </div>
-                                <div class="breadcrumbs-nav__item"><a class="item-link" href="#">Бейгер Мария
-                                        Игоревна</a>
-                                </div>
-                            </div>
                             <div class="h1 vote-title">
                                 Бейгер Мария Игоревна
                             </div>
@@ -292,12 +292,20 @@
         <div class="sending-loader">
             <span class="loader"></span>
         </div>
+
+        <div class="resp-modal" data-modal-type="1">
+            <div class="resp-modal__content">
+                <div class="resp-modal__name">Спасибо за оценку!</div>
+                <div class="resp-modal__btns"> <a href="#" class="resp-modal__btn">Вернуться к списку проектов</a></div>
+            </div>
+        </div>
     </div>
     <script src="./js/jquery.min.js"></script>
     <script>
         const userId = '123123';
-        const projectId = '222333'
+        const projectId = '222333';
 
+        const responceModal = document.querySelector('[data-modal-type="1"]');
 
         $(".toggle-block__head").on("click", function () {
             const toggleBody = $(this).parent().find('.toggle-block__body');
@@ -331,8 +339,9 @@
                 'rating': ratingValue
             }
 
+            // тут аякс
+            responceModal.classList.add('show');
             console.log(data);
-
 
         });
 
