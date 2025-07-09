@@ -676,8 +676,8 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     opacity: 0;
     visibility: hidden;
 
@@ -688,6 +688,7 @@
 }
 
 .resp-modal__content {
+    height: fit-content;
     border-radius: 16px;
     background: #FFF;
     padding: 32px;
@@ -711,12 +712,12 @@
 }
 
 .resp-modal__btn {
-    flex: 1 1 50%;
+    flex: 1 1 50% !important;
     cursor: pointer;
     padding: 19px;
     border-radius: 12px;
     background: #D21957;
-    color: #FFF;
+    color: #FFF !important;
     text-align: center;
     font-size: 20px;
     font-style: normal;
@@ -725,7 +726,8 @@
 
     &._ghost {
         background: #F0F2F3;
-        color: #D21957;
+        color: #D21957 !important;
+        ;
     }
 }
 
@@ -738,6 +740,12 @@
     min-height: 230px;
     margin-bottom: 16px;
     font-size: 16px;
+}
+
+.message-count {
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-align: right;
 }
 
 .message-descr {

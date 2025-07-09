@@ -354,11 +354,11 @@
         <div class="resp-modal" data-modal-type="1">
             <div class="resp-modal__content">
                 <div class="resp-modal__name">Спасибо за оценку!</div>
-                <div class="resp-modal__btn">Вернуться к списку проектов</div>
+                <div class="resp-modal__btns"> <a href="#" class="resp-modal__btn">Вернуться к списку проектов</a></div>
             </div>
         </div>
 
-        <div class="resp-modal " data-modal-type="2">
+        <div class="resp-modal" data-modal-type="2">
             <div class="resp-modal__content">
                 <div class="resp-modal__name">Подтвердите ваше решение</div>
                 <div class="resp-modal__btns">
@@ -371,6 +371,7 @@
         <div class="resp-modal" data-modal-type="3">
             <div class="resp-modal__content">
                 <div class="resp-modal__name">Обоснуйте свое решение</div>
+                <div class="message-count" data-message-length="0">Введенго символов: 0</div>
                 <textarea name="message" class="resp-modal__message"></textarea>
                 <div class="message-descr">Минимальное количество символов - 100</div>
                 <div class="resp-modal__btns">
@@ -392,6 +393,79 @@
             $(this).toggleClass('close')
             toggleBody.slideToggle("slow", function () { });
         });
+
+
+        let selectedValue = null;
+        const responceModal = document.querySelector('[data-modal-type="1"]');
+        const submitModal = document.querySelector('[data-modal-type="2"]');
+        const messageModal = document.querySelector('[data-modal-type="3"]');
+
+        const messageModalField = messageModal.querySelector('.resp-modal__message');
+        const messageCount = messageModal.querySelector('.message-count');
+
+        messageModalField.addEventListener('input', (e) => {
+            const messageLength = e.target.value.length;
+            messageCount.innerHTML = `Введенго символов: ${messageLength}`;
+            messageCount.setAttribute('data-message-length', messageLength);
+
+        })
+
+        document.addEventListener('click', (e) => {
+            const target = e.target;
+            // Выбираем шорт не шорт
+            if (target.closest('[data-val]')) {
+                e.preventDefault();
+                const btnVal = target.closest('[data-val]').getAttribute('data-val');
+                if (btnVal == 'short') {
+                    selectedValue = 'short';
+                    submitModal.classList.add('show');
+                }
+                if (btnVal == 'not-short') {
+                    selectedValue = 'not-short';
+                    messageModal.classList.add('show');
+                }
+            }
+
+            if (target.closest('[data-click="close"]')) {
+                target.closest('.resp-modal').classList.remove('show');
+                selectedValue = null;
+            }
+
+            if (target.closest('[data-click="complite"]')) {
+                if (selectedValue == 'short') {
+                    const data = {
+                        'message': '',
+                        selectedValue,
+                        userId,
+                        projectId,
+                    }
+                    console.log(data);
+
+                    // тут аякс
+                    submitModal.classList.remove('show');
+                    responceModal.classList.add('show');
+                    selectedValue = null;
+                }
+
+                if (selectedValue == 'not-short') {
+                    const messgaeLength = messageCount.getAttribute('data-message-length');
+                    if (messgaeLength < 100) {
+                        return;
+                    }
+                    const data = {
+                        'message': messageModalField.value,
+                        selectedValue,
+                        userId,
+                        projectId,
+                    }
+                    console.log(data);
+                    // тут аякс
+                    messageModal.classList.remove('show');
+                    responceModal.classList.add('show');
+                    selectedValue = null;
+                }
+            }
+        })
 
 
     </script>
