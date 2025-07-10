@@ -574,9 +574,34 @@
                 projectId,
                 'rating': result
             }
-            // тут аякс
-            responceModal.classList.add('show');
-            console.log(data);
+            const formData = new FormData();
+            for (const key in data) {
+                if (data[key] !== undefined && data[key] !== null) {
+                    formData.append(key, data[key]);
+                }
+            }
+            document.body.classList.add('sending');
+            $.ajax({
+                url: '/ajax/ajax.php',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    // Успешная отправка
+                    setTimeout(() => {
+                        document.body.classList.remove('sending');
+                        responceModal.classList.add('show');
+                    }, 2000);
+                    // Очистка формы или другие действия
+                },
+                error: function (xhr, status, error) {
+                    // Обработка ошибки
+                    console.error('Ошибка :', error);
+                    alert('Произошла ошибка. Попробуйте еще раз.');
+                }
+            });
+
 
         });
     </script>
